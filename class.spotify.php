@@ -266,7 +266,7 @@ return $countryname;
 class spotify{
 
     public function check($username, $password){
-        $ch = curl_init('https://accounts.spotify.com/');
+        $ch = curl_init('https://www.deezer.com/us/login/');
         $headers = array();
         $headers[] = "Accept-Encoding: gzip, deflate, sdch, br";
         $headers[] = "Accept-Language: it-IT,it;q=0.8,en-US;q=0.6,en;q=0.4";
@@ -287,7 +287,7 @@ class spotify{
 
         $bon_cookie = base64_encode("0|0|0|0|1|1|1|1");
         $ch = curl_init();
-		curl_setopt($ch, CURLOPT_URL, "https://accounts.spotify.com/api/login");
+		curl_setopt($ch, CURLOPT_URL, "http://api.deezer.com");
         curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
         curl_setopt($ch, CURLOPT_POSTFIELDS, "remember=false&username=$username&password=$password&csrf_token=$token");
         curl_setopt($ch, CURLOPT_POST, 1);
@@ -335,7 +335,7 @@ class spotify{
             $cookies = $auth['cookies'];
             $ch = curl_init();
 
-            curl_setopt($ch, CURLOPT_URL, "https://www.spotify.com/us/account/overview/");
+            curl_setopt($ch, CURLOPT_URL, "https://www.deezer.com/us/login");
             curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
             curl_setopt($ch, CURLOPT_CUSTOMREQUEST, "GET");
 
